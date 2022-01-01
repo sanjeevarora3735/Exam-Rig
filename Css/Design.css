@@ -1,0 +1,623 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&family=Ubuntu:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  text-align: justify;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+html,
+body {
+  scroll-behavior: smooth;
+  height: 100%;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.topnav {
+  padding: 15px 5px;
+  height: min-content;
+  overflow: hidden;
+  background-color: #1a336a;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.topnav a.active {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.LogoHead {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+#SectionContainer1 {
+  background-image: url(../Images/wb-bg-features-1.svg);
+  height: 201%;
+  display: inline-block;
+}
+
+.sticky {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  padding: 5px 5px 0px 5px;
+}
+
+.NavLinks {
+  float: right;
+  padding: 15px 10px;
+}
+
+.NavLinks a {
+  padding: 10px 15px;
+}
+
+.NavLinks a.NavLink:hover {
+  border-radius: 5px;
+  background-color: #4a80ff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.BigTagLine {
+  padding: 25px;
+  padding-top: 50px;
+  margin-bottom: 100px;
+  width: 70%;
+}
+
+.BigTagLine span {
+  padding-top: 50px;
+  font-size: 50px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.BigTagLine p {
+  line-height: 50px;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+}
+
+#smallbreaker {
+  color: black;
+  width: 60px;
+  padding: 1px;
+}
+
+.TryNow {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  padding: 15px 35px;
+  border-radius: 20px;
+  background-color: red;
+}
+
+#FeatureCards {
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-style: initial;
+  border-radius: 10px;
+  width: 100%;
+  background-color: #ffffff;
+  color: black;
+}
+
+.Image img {
+  border-radius: 10px;
+  height: 216px;
+}
+
+#Display_Card {
+  max-height: 515px;
+  width: 32%;
+  padding: 15px;
+  display: inline-block;
+}
+
+.TextContainer {
+  word-wrap: break-word;
+}
+
+.TextContainer .p {
+  max-height: 175px;
+  padding: 30px;
+  padding-top: 10px;
+  font-family: cursive;
+  text-align: justify;
+}
+
+.TextContainer .h3 {
+  font-size: x-large;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#Information {
+  color: black;
+  padding: 100px 20px 10px 20px;
+  width: 50%;
+}
+
+#InformationII {
+  padding: 100px 20px 10px 20px;
+  width: 50%;
+}
+
+#Information_Heading .Heading {
+  font-size: xx-large;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#Information_Description .Description {
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  color: rgba(100, 148, 237, 0.822);
+}
+
+#Benifits {
+  height: 85%;
+  background-image: url(../Images/BackgroundVector.jpg);
+  background-size: 37%;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  padding-left: 25px;
+  align-content: space-between;
+}
+.Heading-2p {
+  padding: 20px;
+  padding-bottom: 10px;
+}
+#Box {
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 30px;
+  border-left: lightskyblue;
+  padding-right: 30px;
+  border-left-style: groove;
+  -webkit-border-image: -webkit-gradient(
+      linear,
+      0 0,
+      0 100%,
+      from(red),
+      to(rgba(0, 0, 0, 0))
+    )
+    1 100%;
+  -webkit-border-image: -webkit-linear-gradient(red, rgba(0, 0, 0, 0)) 1 100%;
+  -moz-border-image: -moz-linear-gradient(red, rgba(0, 0, 0, 0)) 1 100%;
+  -o-border-image: -o-linear-gradient(red, rgba(0, 0, 0, 0)) 1 100%;
+  border-image: linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+#Box .HeaderBox p {
+  width: 330px;
+  color: black;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 25px;
+  margin-bottom: 1.5px;
+  /* height: 57px; */
+}
+.Heading-2 {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 34px;
+  color: black;
+}
+.p2 {
+  font-weight: normal;
+  font-size: 20px;
+  width: 48%;
+  line-height: 30px;
+  padding-left: 20px;
+  word-wrap: break-word;
+}
+#Box .DescriptionBox {
+  width: 340px;
+  word-wrap: break-word;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+.break {
+  padding: 35px;
+}
+
+/* .FeatureBackground{
+  background: rgba(326, 316, 161, 0.27) ;
+  background-size: cover;
+  background-blend-mode: multiply;
+} */
+
+.blocksec {
+  width: 28%;
+  padding: 29px 20px;
+  display: inline-block;
+}
+.SecCard {
+  cursor: pointer;
+  min-height: 345px;
+  max-height: 345px;
+  padding: 25px;
+  background-color: #1a336ac9;
+  width: 100%;
+  border-right: 30px;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.SecCard .Image img {
+  height: 100px;
+  width: 100px;
+}
+
+.SecCard .HeadTexT {
+  font-size: 22px;
+  word-wrap: break-word;
+}
+
+.SecCard .DescTexT {
+  font-size: 17px;
+  text-align: justify;
+  word-wrap: break-word;
+}
+footer {
+  width: 100%;
+  margin-top: 25px;
+}
+footer ul,
+ol {
+  list-style-type: none;
+  display: inline-block;
+}
+footer ul li {
+  display: inline-block;
+  padding: 8px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+footer ol li {
+  display: inline-block;
+  padding: 15px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.hide {
+  display: none;
+}
+
+hr.RoundBold {
+  border: 3px solid #4a80ff;
+  border-radius: 5px;
+  width: 10%;
+}
+
+/* Best For Laptop View & Less Than Equal To 1024px */
+
+@media screen and (min-width: 1440px) {
+  #SectionContainer1 {
+    height: 100vh;
+  }
+
+  #TagCon {
+    margin-top: 200px;
+  }
+  a.TryNow {
+    margin-bottom: 100px;
+  }
+
+  .Active {
+    display: block;
+  }
+}
+
+/* Best For Laptop View & Less Than Equal To 1024px */
+
+@media screen and (min-width: 1366px) {
+  #SectionContainer1 {
+    height: 100vh;
+  }
+
+  .SecCard {
+    max-height: 130px;
+  }
+
+  #TagCon {
+    margin-top: 200px;
+  }
+  a.TryNow {
+    margin-bottom: 100px;
+  }
+
+  .Active {
+    display: block;
+  }
+}
+/* Best For Laptop View & Less Than Equal To 1024px */
+
+@media screen and (max-width: 1024px) {
+  #Display_Card {
+    width: 32%;
+  }
+  .TextContainer .p {
+    text-align: justify;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .tagboxBack {
+    margin-top: -500px;
+  }
+  .tagbox {
+    padding-top: 500px;
+  }
+  .SecCard {
+    padding: 15px;
+  }
+  .blocksec {
+    width: 33.33%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #Display_Card {
+    width: 48%;
+  }
+  #Benifits {
+    overflow: hidden;
+  }
+  .Heading-2 {
+    width: 40%;
+  }
+
+  #Box {
+    overflow: hidden;
+    width: 48%;
+  }
+}
+
+/* Best For Tab View & Less Than Equal To 800px */
+@media screen and (max-width: 768px) {
+  .active {
+    display: block;
+  }
+  #Display_Card {
+    width: 33%;
+  }
+  
+  .TextContainer p{
+    white-space: none;
+  }
+
+  .p2 {
+    font-size: 24px;
+  }
+  #Box {
+    margin-right: 15px;
+    width: 47%;
+  }
+  .DescriptionBox p {
+    padding: 10px;
+  }
+  .blocksec {
+    width: 50%;
+  }
+  footer ul {
+    padding: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .noneDisplay {
+    display: none;
+  }
+  .SecCard {
+    word-wrap: break-word;
+    padding: 10px;
+  }
+  #Benifits {
+    background-image: none;
+  }
+}
+
+/* For Best Mobile View  Under And Above [600 px]  [600++ px]  */
+
+@media screen and (max-width: 600px) {
+  body,html{
+    height: 100%;
+  }  
+
+.topnav a:not(:first-child) {display: none;}
+.topnav a.icon {
+  float: right;
+  display: block;
+}
+ .topnav.responsive {position: relative;}
+.topnav.responsive .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.topnav.responsive a {
+  float: none;
+  display: block;
+  text-align: left;
+}
+#SnapTag ,#SnapTag span {
+  font-size: 30px;
+}
+.BigTagLine{
+  width: 100%;
+}
+.topnav{
+  padding-top: 25px;
+}
+.BigTagLine p {
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} 
+#Display_Card {
+  width: 100%;
+  display: none;
+}
+.TextContainer .p {
+  padding-top: 15px;
+  font-size: 20px;
+}
+#Information{
+  width: 95%;
+  padding-top: 30px;
+}
+#Information_Description .Description {
+  font-size: 22px;
+}
+#Box{
+  display: none;
+}
+.Heading-2{
+  padding: 10px;
+  width: 100%;
+  font-size: 25px;
+} 
+.Heading-2p{
+padding-left: 0px; 
+padding-right: 0px; 
+}
+.p2{
+  width: 100%;
+  padding: 5px;
+}
+.backseccard{
+  margin-top:0px;
+  background-image: none;
+  background-color: mintcream;
+}
+#Border {
+  padding-top: 10px;
+}
+.blocksec{
+  width: 100%;
+}
+.SecCard{
+  max-height: 400px;
+  background-color: rgba(0, 0, 205, 0.486);
+}
+.tAGbOXbORDER a{
+  margin-left: 35px;
+}
+
+footer{
+  margin-top: 300px;
+}
+.DisplayNone{
+  display: none;
+}
+.tagbox{
+  padding-bottom: 0;
+}
+.tagboxBack{
+  margin-top: -580px;
+}
+.TagBoxHead {
+  padding: 20px;
+  margin-left: 15px;
+  font-size: x-large;
+  font-weight: bold;
+}
+.TagBoxDesc {
+  font-size: 20px;
+  text-align: justify;
+} 
+#TagContainer{
+  display: none;
+}
+footer{
+  margin-bottom: 25px;
+}
+footer ul li {
+float: left;
+padding: 8px;
+padding-bottom: 10px;
+padding-top: 10px;
+}
+}
+
+/* For Best Mobile View  Under And Above [460 px] */
+
+@media screen and (max-width: 460px) {
+  body,html{
+    height: 100%;
+  }  
+
+  .SecCard{
+    max-height: 400px;
+  }
+.BigTagLine p {
+  display: none;
+} 
+#Display_Card {
+  width: 100%;
+  display: none;
+}
+.col-md-4{
+  margin-bottom: 10px;
+}
+footer{
+  margin-top: 50px;
+}
+.DisplayNone{
+  display: none;
+}
+#SectionContainer1 {
+  background-image: url(../Images/wb-bg-features-1.svg);
+  height: 85%;
+  display: inline-block;
+}
+}
