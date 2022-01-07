@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Images/Favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/Design.css">
+    <link rel="stylesheet" href="../Css/Examiner.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="../Javascript/Integration/Firebase/Firebase.js"></script>
+    <script src="../Javascript/Student_Examiner.js"></script>
+    <script src="../Javascript/Examiner.js"></script>
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="../Css/Examiner-Animations.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+    <title>Examiner Portal | Exam-Rig</title>
+</head>
+
+<body onload="ExaminerOnLoadFunctions()">
+    <div class="Header">
+        <div class="topnav" id="myTopnav" style="padding: 0px 10px;background-color: #091A2D;">
+            <a href="../Portal/Examiner.html" style="padding-top: 5px;">
+                <img id="Logo" src="../Images/ExamRig-Examiner.jpg" style="width: 200px; height: 50px">
+            </a>
+            <div id="NavLinks" class="NavLinks">
+                <hr id="spacer" style="display: none">
+                <a class="NavLink" style="padding: 9px 15px ;" name="navlink" href="#">Experinces</a>
+
+                <a class="NavLink" style="padding: 9px 15px ;" name="navlink" href="#">Blog</a>
+                <hr id="spacer" style="display: none; width: 10%">
+                <a class="NavLink" style="padding:9px 11px 4px 11px;margin: auto 10px;" name="navlink"
+                    href="javascript:void(0);" title="No New Messages">
+                    <span>
+                        <span class="ri-mail-unread-line" style="font-size: 22px;"></span>
+                    </span>
+                </a>
+                <a class="NavLink" style="padding:9px 11px 4px 11px;" name="navlink" href="javascript:void(0);">
+                    <span>
+                        <span class="ri-notification-4-line" title="No Notification"
+                            onclick="ShowNotification_HideNotification()" style="font-size: 22px;"></span>
+                    </span>
+
+                    <div class="notification_dd">
+                        <ul class="notification_ul">
+                            <li class="starbucks success">
+                                <div class="notify_icon">
+                                    <span class="icon"></span>
+                                </div>
+                                <div class="notify_data">
+                                    <div class="title">
+                                        Lorem, ipsum dolor.
+                                    </div>
+                                    <div class="sub_title">
+                                        Lorem ipsum dolor sit fffffffffffffffffffamet consectetur.
+                                    </div>
+                                </div>
+                                <div class="notify_status">
+                                    <p>Success</p>
+                                </div>
+                            </li>
+                            <li class="baskin_robbins failed">
+                                <div class="notify_icon">
+                                    <span class="icon"></span>
+                                </div>
+                                <div class="notify_data">
+                                    <div class="title">
+                                        Lorem, ipsum dolor.
+                                    </div>
+                                    <div class="sub_title">
+                                        Lorem ipsum dolor sit amet consectetur.
+                                    </div>
+                                </div>
+                                <div class="notify_status">
+                                    <p>Failed</p>
+                                </div>
+                            </li>
+                            <li class="mcd success">
+                                <div class="notify_icon">
+                                    <span class="icon"></span>
+                                </div>
+                                <div class="notify_data">
+                                    <div class="title">
+                                        Lorem, ipsum dolor.
+                                    </div>
+                                    <div class="sub_title">
+                                        Lorem ipsum dolor sit amet consectetur.
+                                    </div>
+                                </div>
+                                <div class="notify_status">
+                                    <p>Success</p>
+                                </div>
+                            </li>
+                            <li class="pizzahut failed">
+                                <div class="notify_icon">
+                                    <span class="icon"></span>
+                                </div>
+                                <div class="notify_data">
+                                    <div class="title">
+                                        Lorem, ipsum dolor.
+                                    </div>
+                                    <div class="sub_title">
+                                        Lorem ipsum dolor sit amet consectetur.
+                                    </div>
+                                </div>
+                                <div class="notify_status">
+                                    <p>Failed</p>
+                                </div>
+                            </li>
+                            <li class="kfc success">
+                                <div class="notify_icon">
+                                    <span class="icon"></span>
+                                </div>
+                                <div class="notify_data">
+                                    <div class="title">
+                                        Lorem, ipsum dolor.
+                                    </div>
+                                    <div class="sub_title">
+                                        Lorem ipsum dolor sit amet consectetur.
+                                    </div>
+                                </div>
+                                <div class="notify_status">
+                                    <p>Success</p>
+                                </div>
+                            </li>
+                            <!-- <li class="show_all">
+                                <p class="link" style="text-decoration: none;font-family: 'Rubik';font-weight: normal;">
+                                    Show All Notifications</p>
+                            </li> -->
+                        </ul>
+                    </div>
+
+                </a>
+                <a id="divider" style="pointer-events: none">|</a>
+                <a class="NavLink-Orange" style="padding:9px 11px 4px 11px;" name="navlink" href="javascript:void(0);">
+                    <span class="MyProfileIcon">
+                        <span class="ri-settings-5-line" title="My Account" style="font-size: 22px;"
+                            onclick="ShowSettings_MyAccount()"></span>
+                    </span>
+                    <div class="Settings_dd">
+                        <ul class="notification_ul" style="margin-top: auto;">
+                            <li class="MyProfile-tab">
+                                <div class="notify_icon">
+                                    <span class="icon"></span>
+                                </div>
+                                <div class="notify_data">
+                                    <div class="title">
+                                        Profile
+                                    </div>
+                                    <span href="#" class="MyProfileButton">My Account</span>
+                                </div>
+                            </li>
+                            <li class="Address-tab">
+                                <div class="notify_icon">
+                                    <span class="icon"></span>
+                                </div>
+
+                                <div class="notify_data">
+                                    <div class="title">
+                                        Address
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="Settings-tab">
+                                <div class="notify_icon">
+                                    <span class="icon"></span>
+                                </div>
+
+                                <div class="notify_data">
+                                    <div class="title">
+                                        Settings
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="Logout-tab" onclick="LogOut()">
+                                <div class="notify_icon">
+                                    <span class="icon"></span>
+                                </div>
+                                <div class="notify_data">
+                                    <div class="title">
+                                        Logout
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i id="Bar" style="font-size: xx-large" class="fa fa-bars"></i>
+            </a>
+        </div>
+        <!-- Alerts Notification (*) -->
+        <div id="success">
+            <div class="alert_Notification  bounce-in-top" id="alert_Notification_error"
+                style="background-color: #DFF0D8;color: #3C763D;">
+                <span id="Cross" class="closebtn_alert_Notification" onclick="alert_Notification(0)">&times;</span>
+                <strong id="Main_Tag">Danger!</strong> <span id="Notification_Message"> Indicates a dangerous or
+                    potentially negative action.</span>
+            </div>
+        </div>
+        <div id="info">
+            <div class="alert_Notification  bounce-in-top" id="alert_Notification_error"
+                style="background-color: #D9EDF7;color: #31708F;">
+                <span id="Cross" class="closebtn_alert_Notification" onclick="alert_Notification(1)">&times;</span>
+                <strong id="Main_Tag">Danger!</strong> <span id="Notification_Message"> Indicates a dangerous or
+                    potentially negative action.</span>
+            </div>
+        </div>
+        <div id="warning">
+            <div class="alert_Notification  bounce-in-top" id="alert_Notification_error"
+                style="background-color: #FCF8E3;color: #8A6D3B;">
+                <span id="Cross" class="closebtn_alert_Notification" onclick="alert_Notification(2)">&times;</span>
+                <strong id="Main_Tag">Danger!</strong> <span id="Notification_Message"> Indicates a dangerous or
+                    potentially negative action.</span>
+            </div>
+        </div>
+        <div id="Danger">
+            <div class="alert_Notification  bounce-in-top" id="alert_Notification_error"
+                style="background-color: #F2DEDE;color: #A94442;">
+                <span id="Cross" class="closebtn_alert_Notification" onclick="alert_Notification(3)">&times;</span>
+                <strong id="Main_Tag">Danger!</strong> <span id="Notification_Message"> Indicates a dangerous or
+                    potentially negative action.</span>
+            </div>
+        </div>
+
+        <!-- Ends -->
+    </div>
+
+    <div class="EverSquareContainer">
+
+
+        <div class="SideBar">
+            <div class="layout has-sidebar fixed-sidebar fixed-header">
+                <aside id="sidebar" class="sidebar break-point-lg has-bg-image">
+                    <div class="image-wrapper">
+                        <img src="https://user-images.githubusercontent.com/25878302/144499035-2911184c-76d3-4611-86e7-bc4e8ff84ff5.jpg"
+                            alt="sidebar background" />
+                    </div>
+                    <div class="sidebar-layout">
+                        <div class="sidebar-header">
+                            <span id="Examiner_Name" style="
+                          text-transform: uppercase;
+                          font-size: 15px;
+                          letter-spacing: 3px;
+                          font-weight: bold;
+                        ">Examiner Name</span>
+                        </div>
+                        <div class="sidebar-content">
+                            <nav class="menu open-current-submenu">
+                                <ul>
+                                    <li class="menu-item sub-menu">
+                                        <a href="#" onclick="ShowFirstSubMenu(0)">
+                                            <span class="menu-icon">
+                                                <i class="ri-global-fill"></i>
+                                            </span>
+                                            <span class="menu-title">Dashboard</span>
+                                        </a>
+                                        <div class="sub-menu-list">
+                                            <ul>
+                                                <li class="menu-item">
+                                                    <a href="#">
+                                                        <span class="menu-icon">
+                                                            <i class="ri-rest-time-fill"></i> </span>
+                                                        <span class="menu-title">Upcoming Exams</span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="#">
+                                                        <span class="menu-icon">
+                                                            <i class="ri-map-pin-user-line"></i></span>
+                                                        <span class="menu-title">Exam Race</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="menu-item sub-menu">
+                                        <a href="#" onclick="ShowFirstSubMenu(1)">
+                                            <span class="menu-icon">
+                                                <i class="ri-vip-diamond-fill"></i>
+                                            </span>
+                                            <span class="menu-title">Exams</span>
+                                            <span class="menu-suffix">&#x1F525;</span>
+                                        </a>
+                                        <div class="sub-menu-list">
+                                            <ul>
+                                                <li class="menu-item">
+                                                    <a href="#">
+                                                        <span class="menu-icon">
+                                                            <i class="ri-arrow-right-s-fill"></i> </span>
+                                                        <span class="menu-title">View All</span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="#">
+                                                        <span class="menu-icon">
+                                                            <i class="ri-loader-2-fill"></i> </span>
+                                                        <span class="menu-title">Demo</span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item sub-menu">
+                                                    <a href="#" onclick="ShowFirstSubMenu(2)">
+                                                        <span class="menu-icon">
+                                                            <i class="ri-pen-nib-fill"></i> </span>
+                                                        <span class="menu-title">Generate New</span>
+                                                    </a>
+                                                    <div class="sub-menu-list">
+                                                        <ul>
+                                                            <li class="menu-item">
+                                                                <a href="#">
+                                                                    <span class="menu-icon">
+                                                                        <i class="ri-focus-2-line"></i> </span>
+                                                                    <span class="menu-title">Objective</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="#">
+                                                                    <span class="menu-icon">
+                                                                        <i class="ri-file-copy-2-line"></i> </span>
+                                                                    <span class="menu-title">Subjective</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="menu-item sub-menu">
+                                        <a href="#" onclick="ShowFirstSubMenu(3)">
+                                            <span class="menu-icon">
+                                                <i class="ri-bar-chart-2-fill"></i>
+                                            </span>
+                                            <span class="menu-title">Result</span>
+                                        </a>
+                                        <div class="sub-menu-list">
+                                            <ul>
+                                                <li class="menu-item">
+                                                    <a href="#">
+                                                        <span class="menu-icon">
+                                                            <i class="ri-archive-drawer-line"></i> </span>
+                                                        <span class="menu-title">Saved Results</span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="#">
+                                                        <span class="menu-icon">
+                                                            <i class="ri-pie-chart-2-fill"></i> </span>
+                                                        <span class="menu-title">Pie chart</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="menu-item sub-menu">
+                                        <a href="#" onclick="ShowFirstSubMenu(4)">
+                                            <span class="menu-icon">
+                                                <i class="ri-shield-user-fill"></i> </span>
+                                            <span class="menu-title">Scholars</span>
+                                        </a>
+                                        <div class="sub-menu-list">
+                                            <ul>
+                                                <li class="menu-item">
+                                                    <a href="#">
+                                                        <span class="menu-icon">
+                                                            <i class="ri-slideshow-4-line"></i> </span>
+                                                        <span class="menu-title">Scholar Display</span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="#">
+                                                        <span class="menu-icon">
+                                                            <i class="ri-user-received-fill"></i> </span>
+                                                        <span class="menu-title">New Scholar</span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="#">
+                                                        <span class="menu-icon">
+                                                            <i class="ri-link-unlink-m"></i> </span>
+                                                        <span class="menu-title">Invite Scholar</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="menu-item sub-menu">
+                                        <a href="#" onclick="ShowFirstSubMenu(5)">
+                                            <span class="menu-icon">
+                                                <i class="ri-brush-3-fill"></i>
+                                            </span>
+                                            <span class="menu-title">Theme</span>
+                                        </a>
+                                        <div class="sub-menu-list">
+                                            <ul>
+                                                <li class="menu-item">
+                                                    <a href="#">
+                                                        <span class="menu-icon">
+                                                            <i class="ri-moon-fill"></i> </span>
+                                                        <span class="menu-title">Dark</span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="#">
+                                                        <span class="menu-icon">
+                                                            <i class="ri-sun-line"></i> </span>
+                                                        <span class="menu-title">Light</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">
+                                            <span class="menu-icon">
+                                                <i class="ri-question-fill"></i>
+                                            </span>
+                                            <span class="menu-title">Saved Questions</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">
+                                            <span class="menu-icon">
+                                                <i class="ri-book-2-fill"></i>
+                                            </span>
+                                            <span class="menu-title">Documentation</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">
+                                            <span class="menu-icon">
+                                                <i class="ri-calendar-fill"></i>
+                                            </span>
+                                            <span class="menu-title">Calendar</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">
+                                            <span class="menu-icon">
+                                                <i class="ri-service-fill"></i>
+                                            </span>
+                                            <span class="menu-title">Examples</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="sidebar-footer">
+                            <span style="padding: 7px;font-size: 18px;padding-bottom: 10px;" onclick="LogOut()"><i
+                                    class="ri-logout-box-fill" style="margin-right: 18px;font-size: 18px;"></i>LOG
+                                OUT</span>
+                        </div>
+                    </div>
+                </aside>
+                <div id="overlay" class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="MainDisplay_Examiner" onclick="MainDisplay_ExaminerOnLoad()">
+
+            <div class="Table_MainDisplay">
+                <div class="MainHeaderTable">
+
+
+                </div>
+                <div class="SecondryHeaderTab">
+                    <div class="QuestionsTab">
+
+                    </div>
+                    <div class="AnswersTab">
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
